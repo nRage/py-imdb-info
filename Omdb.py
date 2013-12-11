@@ -68,11 +68,13 @@ class GetInfo(object):
         """Download poster image."""
         if self.getPosterLink() == 'N/A':
             print 'Poster not available'
+            return 0
         else:
             image = urllib2.urlopen(self.getPosterLink()).read()
             w = open(self.getTitle()[:-1] + self.getPosterLink()[-4:], "wb")
             w.write(image)
             w.close()
+            return 1
 
 
 
