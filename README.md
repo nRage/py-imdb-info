@@ -1,0 +1,1 @@
+A class to retrieve film information from imdb using omdbapi.com.
