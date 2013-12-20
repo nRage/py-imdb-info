@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import json
 import sys
 import urllib2
@@ -12,7 +14,7 @@ class GetInfo(object):
     def __init__(self, imdbID):
         try:
             self.data = json.load(urllib2.urlopen('http://www.omdbapi.com/?i=%s' % (imdbID)))
-        except URLError:
+        except urllib2.URLError:
             print 'Error connecting to omdbapi.com'
             sys.exit(1)
 
